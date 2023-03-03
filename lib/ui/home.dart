@@ -84,8 +84,10 @@ class _HomePageState extends State<HomePage> {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    TodaysWeather(weatherModel:weatherModel),
-                    const SizedBox(height: 10,),
+                    TodaysWeather(weatherModel: weatherModel),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     const Text(
                       "Weather By Hours",
                       style: TextStyle(
@@ -93,7 +95,9 @@ class _HomePageState extends State<HomePage> {
                         fontSize: 22,
                       ),
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     SizedBox(
                       height: 150,
                       child: ListView.builder(
@@ -114,7 +118,9 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                       ),
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     const Text(
                       "Next 7 Days Weather",
                       style: TextStyle(
@@ -122,7 +128,9 @@ class _HomePageState extends State<HomePage> {
                         fontSize: 22,
                       ),
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Expanded(
                         child: ListView.builder(
                       itemBuilder: (context, index) {
@@ -156,6 +164,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-
 }
