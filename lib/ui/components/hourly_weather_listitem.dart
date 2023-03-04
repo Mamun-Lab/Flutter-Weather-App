@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:weather_app/model/weather_model.dart';
 
 class HourlyWeatherListItem extends StatelessWidget {
-  final time, url, temp;
+  final Hour? hour;
 
-  const HourlyWeatherListItem({Key? key, this.url, this.temp, this.time})
+  const HourlyWeatherListItem({Key? key, this.hour})
       : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class HourlyWeatherListItem extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 8.0),
-                child: Text(temp,
+                child: Text(hour?.tempC?.round().toString() ??"",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -34,11 +37,12 @@ class HourlyWeatherListItem extends StatelessWidget {
           ),
           Container(
             height: 50,
-            child: Image.network(url),
+            child: Image.network("https:${hour?.condition?.icon.toString()}"),
             decoration:
             BoxDecoration(shape: BoxShape.circle, color: Colors.teal),
           ),
-          Text(time, style: TextStyle(color: Colors.white)),
+          Text(DateFormat.j().format(
+              DateTime.parse(hour?.time?.toString() ?? "")), style: TextStyle(color: Colors.white)),
         ],
       ),
     );

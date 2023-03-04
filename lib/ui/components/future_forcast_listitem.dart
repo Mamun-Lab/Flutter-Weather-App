@@ -19,7 +19,7 @@ class FutureForcastListItem extends StatelessWidget {
       width: double.infinity,
       child: Row(
         children: [
-          Image.network(forecastday?.day?.condition?.icon ?? ""),
+          Image.network("https:${forecastday?.day?.condition?.icon ?? ""}"),
           Expanded(
             child: Text(
               DateFormat.MMMEd()

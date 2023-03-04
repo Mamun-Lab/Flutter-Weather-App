@@ -106,10 +106,7 @@ class _HomePageState extends State<HomePage> {
                               ?.forecast?.forecastday?[0].hour?[index];
 
                           return HourlyWeatherListItem(
-                            temp: hour?.tempC?.round().toString(),
-                            url: hour?.condition?.icon.toString(),
-                            time: DateFormat.j().format(
-                                DateTime.parse(hour?.time?.toString() ?? "")),
+                            hour: hour,
                           );
                         },
                         itemCount: weatherModel

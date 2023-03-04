@@ -112,7 +112,7 @@ class TodaysWeather extends StatelessWidget {
                     child: Row(
                       children: [
                         Image.network(
-                            weatherModel?.current?.condition?.icon ?? ""),
+                            "https:${weatherModel?.current?.condition?.icon ?? ""}"),
                       ],
                     ),
                   ),

@@ -194,7 +194,7 @@ class Condition {
 
   Condition.fromJson(Map<String, dynamic> json) {
     text = json['text'];
-    icon = "https:" + json['icon'];
+    icon = json['icon'];
     code = json['code'];
   }
 
